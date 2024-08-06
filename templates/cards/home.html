@@ -12,6 +12,7 @@
 </p>
 <hr>
 <div class="container">
+    <!-- News feeds -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2">
         {% for article in news %}
         <div class="col">
@@ -35,5 +36,24 @@
         </div>
         {% endfor %}
     </div>
+</div>
+
+<!-- Next & Previous page natvigations -->
+<div class="pagination">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+        {% if page > 1 %}
+          <li class="page-item disabled">
+            <a href="?country={{ country }}&category={{ category }}&page={{ page|add:"-1" }}">Previous</a>
+          </li>
+        {% endif %}
+        
+        {% if has_more %}
+          <li class="page-item">
+            <a href="?country={{ country }}&category={{ category }}&page={{ page|add:"1" }}">Next</a>
+          </li>
+        {% endif %}
+        </ul>
+    </nav>
 </div>
 {% endblock %}
