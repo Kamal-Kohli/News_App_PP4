@@ -20,7 +20,10 @@
             <div class="row align-items-center">
                 <div class="col-md-6 mt-5 offset-md-2">
                     <h3>{% trans "Sign In" %}</h3>
-                    <p>{% blocktrans %}If you already have an account, or <a class="link" href="{% url 'account_signup' %}">sign up</a> if you're a new user.{% endblocktrans %}</p>
+                    <p>{% blocktrans %}If you already have an account, or {% endblocktrans %}
+                        <a class="link" href="{% url 'account_signup' %}">{% trans "sign up" %}</a> 
+                        {% blocktrans %}if you're a new user.{% endblocktrans %}
+                    </p>
                 </div>
             </div>
             <div class="row align-items-center">
