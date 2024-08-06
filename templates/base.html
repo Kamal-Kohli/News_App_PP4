@@ -1,3 +1,4 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,14 +9,14 @@
             rel="stylesheet" 
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
             crossorigin="anonymous">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <script src="https://kit.fontawesome.com/16606b6431.js" crossorigin="anonymous"></script>
         <title>News</title>
     </head>
     <body class="custom-bg">
         <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href=""><img src="" alt="" class="logo" width=""></a>
+                <a class="navbar-brand" href="{% url 'home' %}?category=general"><img src="{% static 'images/logo.webp' %}" alt="Animated Logo" class="logo" width="200px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -24,35 +25,34 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">General</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}?category=general">General</a>
                         </li>
                         <!-- Country Dropdown links -->
+                        <!-- Country Dropdown links -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" 
-                                data-bs-toggle="dropdown" aria-expanded="false">Country</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Country</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="">Germany</a></li>
-                                <li><a class="dropdown-item" href="">India</a></li>
-                                <li><a class="dropdown-item" href="">Ireland</a></li>
-                                <li><a class="dropdown-item" href="">Israel</a></li>
-                                <li><a class="dropdown-item" href="">Russia</a></li>
-                                <li><a class="dropdown-item" href="">South Africa</a></li>
-                                <li><a class="dropdown-item" href="">Ukraine</a></li>
-                                <li><a class="dropdown-item" href="">United States</a></li>
-                                <li><a class="dropdown-item" href="">United Kingdom</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=de">Germany</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=in">India</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=ie">Ireland</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=il">Israel</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=ru">Russia</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=za">South Africa</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=ua">Ukraine</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=us">United States</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?country=gb">United Kingdom</a></li>
                             </ul>
                         </li>
                         <!-- Categories Dropdown links -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" 
-                                data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="">Sports</a></li>
-                                <li><a class="dropdown-item" href="">Business</a></li>
-                                <li><a class="dropdown-item" href="">Entertainment</a></li>
-                                <li><a class="dropdown-item" href="">Technology</a></li>
-                                <li><a class="dropdown-item" href="">Health</a></li>
-                                <li><a class="dropdown-item" href="">Science</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?category=Sports">Sports</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?category=Business">Business</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?category=Entertainment">Entertainment</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?category=technology">Technology</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?category=health">Health</a></li>
+                                <li><a class="dropdown-item" href="{% url 'home' %}?category=Science">Science</a></li>
                             </ul>
                         </li>
                         <!-- Registration/Login/Logout -->
