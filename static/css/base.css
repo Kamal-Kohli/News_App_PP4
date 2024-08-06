@@ -75,3 +75,27 @@ footer p {
 .social-links a:hover {
     color: #cccccc; 
 }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination a {
+    background: #124e66;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.pagination a:hover {
+    background: #212a31;
+    color: #fff;
+}
