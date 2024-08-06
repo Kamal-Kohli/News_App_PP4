@@ -99,3 +99,36 @@ footer p {
     background: #212a31;
     color: #fff;
 }
+
+/* Floating icons */
+.floating-icons {
+    position: fixed;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  
+    
+}
+
+.floating-icons a {
+    background: #124e66;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.floating-icons a:hover {
+    background-color: #212a31;
+}
