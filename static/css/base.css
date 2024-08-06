@@ -6,3 +6,7 @@ body.custom-bg {
     background-color: #d3d9d4;
 }
 
+h1 {
+    padding-top: 2rem;
+    color: #124e66;
+}
