@@ -43,37 +43,76 @@ nav ul li a {
     font-weight: 500;
 }
 
-/* Footer */
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
 
-footer .container {
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image styling */
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     width: 100%;
-    margin-bottom: 2rem;
+    height: 250px;
+    object-fit: cover;
 }
 
-footer {
-    background-color: #212a31; 
-    height: 150px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+/* Card body */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
 }
 
-footer p {
-    margin: 0; 
+/* Article author */
+.card-title.p {
+    font-size: 14px;
+    color: #212a31;
+    margin-bottom: 10px;
 }
 
-.social-links {
-    margin-top: 0.5rem; 
+/* Article title */
+.card-title.h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #212a31;
 }
 
-.social-links a {
-    text-decoration: none; 
-    color: #ffffff; 
-    transition: color 0.3s ease; 
+/* Article source */
+.card-title.h4 {
+    font-size: 16px;
+    color: #124e66;
+    margin-bottom: 10px;
 }
 
-.social-links a:hover {
-    color: #cccccc; 
+/* Article description */
+.card-text {
+    font-size: 14px;
+    color: #748d92;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-article {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 /* Pagination */
@@ -131,4 +170,37 @@ footer p {
 
 .floating-icons a:hover {
     background-color: #212a31;
+}
+
+/* Footer */
+
+footer .container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: #212a31; 
+    height: 150px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+footer p {
+    margin: 0; 
+}
+
+.social-links {
+    margin-top: 0.5rem; 
+}
+
+.social-links a {
+    text-decoration: none; 
+    color: #ffffff; 
+    transition: color 0.3s ease; 
+}
+
+.social-links a:hover {
+    color: #cccccc; 
 }
