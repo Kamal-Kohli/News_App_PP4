@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Apps
-    'news'
+    'news',
+
+    #Django Allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +55,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #Django Allauth
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'news_main.urls'
@@ -57,7 +65,10 @@ ROOT_URLCONF = 'news_main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +79,14 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of allauth
+    'django.contrib.auth.backends.ModelBackend',
+
+    # allauth specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 WSGI_APPLICATION = 'news_main.wsgi.application'
@@ -114,12 +133,23 @@ USE_I18N = True
 
 USE_TZ = True
 
+#Account Setup
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your_app_password'  # or 'your_password' if not using 2-Step Verification
+DEFAULT_FROM_EMAIL = 'your_email@gmail.com'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
