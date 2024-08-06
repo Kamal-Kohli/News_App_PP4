@@ -11,9 +11,10 @@
             crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <script src="https://kit.fontawesome.com/16606b6431.js" crossorigin="anonymous"></script>
-        <title>News</title>
+        <title>H&T news</title>
     </head>
     <body class="custom-bg">
+        {% with request.resolver_match.url_name as url_name %}
         <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}?category=general"><img src="{% static 'images/logo.webp' %}" alt="Animated Logo" class="logo" width="200px"></a>
@@ -69,10 +70,12 @@
                 </div>
             </div>
         </nav>
-         <!-- Footer -->
+        {% endwith %}
+
+    <!-- News Articles(home.html) -->
     <div class="content container">
         {% block content %}{% endblock %}
-     </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-white pt-2 d-flex mt-auto">
